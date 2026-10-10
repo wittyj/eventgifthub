@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Open your invitation | EventGiftHub</title><style>body{font:17px/1.6 system-ui,sans-serif;background:#faf8f4;color:#173e2c;display:grid;place-items:center;min-height:95vh}main{max-width:480px;padding:24px;text-align:center}a{color:inherit}</style></head><body><main><h1>EventGiftHub</h1><p id="message">Opening your invitation…</p><a id="home" href="/">Return to home</a></main><script>
+const slug=location.pathname.replace(/^\/+|\/+$/g,'');
+if(/^[a-z0-9-]{3,60}$/.test(slug)&&!['assets','admin'].includes(slug)){
+ const target='/#/'+slug;
+ document.getElementById('home').href=target;
+ document.getElementById('home').textContent='Open the invitation';
+ location.replace(target);
+}else document.getElementById('message').textContent='We could not find this page.';
+</script></body></html>
